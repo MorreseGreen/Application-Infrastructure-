@@ -32,6 +32,9 @@ variable "private_a_subnet_name" {
   type = string
 }
 
+variable "private_b_subnet_name" {
+  type = string
+}
 variable "data_a_subnet_name" {
   type = string
 }
