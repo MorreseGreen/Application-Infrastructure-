@@ -1,0 +1,12 @@
+# ASSIGNING VALUE TO VARIABLES
+aws_owner_id                = "137112412989"
+aws_ami_name                = "amzn2-ami-kernel-5.10-hvm*"
+vpc_name                    = "Wordpress-vpc"
+public_a_subnet_name        = "Wordpress-public-a"
+public_b_subnet_name        = "Wordpress-public-b"
+private_a_subnet_name       = "Wordpress-private-a"
+private_b_subnet_name       = "Wordpress-private-b"
+data_a_subnet_name          = "Wordpress-data-a"
+data_b_subnet_name          = "Wordpress-data-b"
+number_of_private_instances = 4
+subdomain                   = "my-blue-greeen-app"
