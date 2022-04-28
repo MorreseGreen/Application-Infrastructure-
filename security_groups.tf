@@ -50,17 +50,8 @@ resource "aws_security_group" "loadbalancer_sg" {
   description = "Allow access to DB instance"
   vpc_id      = data.aws_vpc.main_vpc.id
 
-  # INBOUND CONNECTIONS
   ingress {
-    description = "Allow SSH into the EC2"
-    from_port   = 22
-    to_port     = 22
-    protocol    = "tcp"
-    cidr_blocks = ["192.168.0.0/24"] # ALL INSTANCES IN PUBLIC SUBNET IS ALLOWED TO CONNECT
-  }
-
-  ingress {
-    description = "Allow EC2 instance to access RDS Database "
+    description = "Allow EC2 instance to access RDS Database"
     from_port   = 3306
     to_port     = 3306
     protocol    = "tcp"
@@ -76,3 +67,5 @@ resource "aws_security_group" "loadbalancer_sg" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 }
+    
+  
