@@ -1,6 +1,6 @@
 # ASSIGNING VALUE TO VARIABLES
-aws_owner_id                = "137112412989"
-aws_ami_name                = "amzn2-ami-kernel-5.10-hvm*"
+aws_owner_id                = "342623272824"
+aws_ami_name                = "wordpress-website-20220428150356"
 vpc_name                    = "Wordpress-vpc"
 public_a_subnet_name        = "Wordpress-public-a"
 public_b_subnet_name        = "Wordpress-public-b"
