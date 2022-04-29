@@ -35,14 +35,6 @@ variable "private_a_subnet_name" {
 variable "private_b_subnet_name" {
   type = string
 }
-variable "data_a_subnet_name" {
-  type = string
-}
-
-variable "data_b_subnet_name" {
-  type = string
-}
-
 variable "my_keypair" {
   default = "aws_keypair"
 }
