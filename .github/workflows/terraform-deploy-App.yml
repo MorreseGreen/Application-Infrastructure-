@@ -1,0 +1,38 @@
+name: Terraform deploy demo
+on:
+  push:
+    branches:
+      main
+jobs:
+  terraform-deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      packages: write
+      contents: read
+      id-token: write
+    steps:
+      - name: git clone of my repo
+        uses: actions/checkout@v3
+
+      - name: AWS authentication
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          role-to-assume: arn:aws:iam::342623272824:role/github-oidc
+          aws-region: us-east-1
+          role-session-name: GithubAppInfrastructureDeployment
+
+      - name: Set up Terraform
+        uses: hashicorp/setup-terraform@v1
+      
+      - name: Init project
+        run: terraform init
+      
+      - name: Terraform Format
+        run: terraform fmt -check
+
+      
+      - name: Run TF plan
+        run: terraform plan
+
+      - name: Apply infra
+        run: terraform apply -auto-approve
