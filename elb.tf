@@ -30,7 +30,7 @@ resource "aws_lb_listener" "http_listener" {
 }
 
 resource "aws_elb" "lb" {
-  name               = "test-lb"
+  name               = ""
   availability_zones = ["us-east-1a"]
 
   listener {
@@ -42,8 +42,8 @@ resource "aws_elb" "lb" {
 }
 
 resource "aws_lb_cookie_stickiness_policy" "foo" {
-  name                     = "foo-policy"
+  name                     = ""
   load_balancer            = aws_elb.lb.id
   lb_port                  = 80
-  cookie_expiration_period = 600
+  cookie_expiration_period = 3600
 }
