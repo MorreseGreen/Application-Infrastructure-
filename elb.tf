@@ -30,7 +30,7 @@ resource "aws_lb_listener" "http_listener" {
 }
 
 
-resource "aws_lb_cookie_stickiness_policy" "application_infrastructure" {
+resource "lb_cookie_stickiness_policy" "application_infrastructure" {
   name                     = "application-lb"
   load_balancer            = aws_lb.application_lb.id
   lb_port                  = 80
