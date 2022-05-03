@@ -30,7 +30,7 @@ resource "aws_lb_listener" "http_listener" {
 }
 
 resource "aws_elb" "lb" {
-  name               = ""
+  name               = "application-lb"
   availability_zones = ["us-east-1a"]
 
   listener {
