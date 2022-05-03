@@ -29,21 +29,10 @@ resource "aws_lb_listener" "http_listener" {
   }
 }
 
-resource "aws_elb" "lb" {
-  name               = "application-lb"
-  availability_zones = ["us-east-1a"]
-
-  listener {
-    instance_port     = 8000
-    instance_protocol = "http"
-    lb_port           = 80
-    lb_protocol       = "http"
-  }
-}
 
 resource "aws_lb_cookie_stickiness_policy" "application_infrastructure" {
   name                     = "application-lb"
-  load_balancer            = aws_elb.lb.id
+  load_balancer            = aws_lb.application_lb.id
   lb_port                  = 80
   cookie_expiration_period = 1
 }
