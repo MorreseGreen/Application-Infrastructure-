@@ -45,5 +45,5 @@ resource "aws_lb_cookie_stickiness_policy" "application_infrastructure" {
   name                     = "application-lb"
   load_balancer            = aws_elb.lb.id
   lb_port                  = 80
-  cookie_expiration_period = "3600"
+  cookie_expiration_period = 1
 }
