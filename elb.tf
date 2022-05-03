@@ -41,7 +41,7 @@ resource "aws_elb" "lb" {
   }
 }
 
-resource "aws_lb_cookie_stickiness_policy" "foo" {
+resource "aws_lb_cookie_stickiness_policy" "application_infrastructure" {
   name                     = ""
   load_balancer            = aws_elb.lb.id
   lb_port                  = 80
